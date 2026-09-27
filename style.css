@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin: 24px 0 10px;
+}
+
+.order-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 160px;
+}
+
+.field label {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input, button {
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.order-details input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+th, td {
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    font-size: 0.85rem;
+    border-bottom: 2px solid #ddd;
+}
+
+td input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove-item-btn {
+    background: #e05555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.remove-item-btn:hover {
+    background: #c73f3f;
+}
+
+.items-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#add-item-btn {
+    background: #2f7de1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+#add-item-btn:hover {
+    background: #235fb0;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.submit-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#submit-btn {
+    background: #2fa84f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background: #248540;
+}
+
+#submit-btn:disabled {
+    background: #9bc9a8;
+    cursor: not-allowed;
+}
+
+#status-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+#status-message.success {
+    color: #248540;
+}
+
+#status-message.error {
+    color: #c73f3f;
+}
+
+/* Tablet and below */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 16px;
+        border-radius: 0;
+    }
+
+    .order-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .field {
+        min-width: 0;
+    }
+
+    input, button {
+        font-size: 16px; /* prevents iOS auto-zoom on focus */
+    }
+
+    /* stack the items table into cards, since columns don't fit narrow screens */
+    #items-table thead {
+        display: none;
+    }
+
+    #items-table, #items-table tbody, #items-table tr, #items-table td {
+        display: block;
+        width: 100%;
+    }
+
+    #items-table tr {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        padding: 10px;
+    }
+
+    #items-table td {
+        padding: 6px 0;
+        border: none;
+    }
+
+    #items-table td[data-label]:not([data-label=""])::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 2px;
+    }
+
+    .items-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #add-item-btn, #submit-btn, .remove-item-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .total {
+        text-align: right;
+    }
+
+    .submit-actions {
+        text-align: stretch;
+    }
+
+    #status-message {
+        text-align: center;
+    }
+}
