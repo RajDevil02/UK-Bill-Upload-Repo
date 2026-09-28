@@ -67,10 +67,16 @@ function collectFormData() {
         items.push({ name, quantity, rate, amount: quantity * rate });
     });
 
+    const paymentMode = document.querySelector('input[name="payment-mode"]:checked').value;
+    const category = document.querySelector('input[name="category"]:checked').value;
+
     return {
         date: document.getElementById('order-date').value,
         storeName: document.getElementById('store-name').value.trim(),
         orderId: document.getElementById('order-id').value.trim(),
+        description: document.getElementById('description').value.trim(),
+        paymentMode,
+        category,
         items
     };
 }

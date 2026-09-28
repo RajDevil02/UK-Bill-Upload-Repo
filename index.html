@@ -25,6 +25,29 @@
                 </div>
             </div>
 
+            <div class="field description-field">
+                <label for="description">Description</label>
+                <textarea id="description" rows="2" placeholder="e.g. Client meeting expenses"></textarea>
+            </div>
+
+            <div class="radio-group">
+                <span class="radio-group-label">Payment Mode</span>
+                <div class="radio-options">
+                    <label><input type="radio" name="payment-mode" value="Cash" > Cash</label>
+                    <label><input type="radio" name="payment-mode" value="Card" checked> Card</label>
+                </div>
+            </div>
+
+            <div class="radio-group">
+                <span class="radio-group-label">Category</span>
+                <div class="radio-options">
+                    <label><input type="radio" name="category" value="Travel" > Travel</label>
+                    <label><input type="radio" name="category" value="Stay"> Stay</label>
+                    <label><input type="radio" name="category" value="Meal" checked> Meal</label>
+                    <label><input type="radio" name="category" value="Others"> Others</label>
+                </div>
+            </div>
+
             <h2>Items</h2>
             <table id="items-table">
                 <thead>
